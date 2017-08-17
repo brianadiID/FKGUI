@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SisfoJAD | Jadwal</title>
+    <title>SIJADIK | Jadwal</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -25,6 +25,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
           apply the skin class to the body tag so the changes take effect.
     -->
     <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="../plugins/select2/select2.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -64,7 +66,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>S</b>JD</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Sisfo</b>JAD</span>
+          <span class="logo-lg"><b>SI</b>JADIK</span>
         </a>
 
         <!-- Header Navbar -->
@@ -193,6 +195,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- Main content -->
         <section class="content">
+            
+            <div class="box box-default">
+              <div class="box-body">
+
+                    <div class="form-group">
+                      <label>Jadwal Dosen</label>
+                      <select class="form-control select2" style="width: 100%;">
+                        <option selected="selected">Departemen Oral Biologi --- drg.A. Winoto Suhartono, M.Si.</option>
+                        <option>Departemen Ilmu Bedah Mulut --- Dr.drg.Abdul Latif, Sp.BM(K).</option>
+                        <option>Departemen Ilmu Bedah Mulut --- Dosen Aa</option>
+                        <option>Departemen Ilmu Bedah Mulut --- Dosen Bb</option>
+                        <option>Departemen Oral Biologi --- Dosen Cc</option>
+                        <option>Departemen Oral Biologi --- drg.A. Winoto Suhartono, M.Si.</option>
+                      </select>
+                    </div><!-- /.form-group -->
+          
           <div class="row">
             <div class="col-md-12">
               <div class="nav-tabs-custom">
@@ -301,6 +319,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div><!-- nav-tabs-custom -->
             </div><!-- /.col -->
           </div><!-- /.row -->
+
+              </div>
+            </div>
+
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
 
@@ -333,6 +355,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="../dist/js/app.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js"></script>
+    <!-- Select2 -->
+    <script src="../plugins/select2/select2.full.min.js"></script>
+    <script>
+      $(function () {
+        //Initialize Select2 Elements
+        $(".select2").select2();
+      });
+    </script>    
 <!--
     <script>
       $(function () {
