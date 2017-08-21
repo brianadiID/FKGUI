@@ -197,9 +197,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <section class="content">
             
           <div class="box box-default">
-            <div class="box-header">
-              <h4 class="box-title">Jadwal Dosen</h4>
-            </div>
             <div class="box-body">
               <div class="form-group">
                 <select class="form-control select2" style="width: 100%;">
@@ -212,16 +209,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </select>
               </div><!-- /.form-group -->
 
-                  <div class="callout callout-warning">
-                    <p>Profesi\Klinik Selasa(16/9/2017) 08.00-11.00 bentrok dengan Fasilitator Selasa(weekly) 08.00-09.40</p>
-                    <p>Profesi\Klinik Rabu(17/9/2017) 13.00-16.00 bentrok dengan Narasumber Rabu(weekly) 13.00-13.50</p>
-                    <p>Profesi\Klinik Kamis(18/9/2017) 08.00-11.00 bentrok dengan Publishing Kamis(weekly) 08.00-10.30</p>
-                  </div>
+              <div class="callout callout-warning">
+                <h4>Ada 3 konflik jadwal. Perbaiki!</h4>
+                <p>Profesi\Klinik Selasa(16/9/2017) 08.00-11.00 bentrok dengan Fasilitator Selasa(weekly) 08.00-09.40</p>
+                <p>Profesi\Klinik Rabu(17/9/2017) 13.00-16.00 bentrok dengan Narasumber Rabu(weekly) 13.00-13.50</p>
+                <p>Profesi\Klinik Kamis(18/9/2017) 08.00-11.00 bentrok dengan Publishing Kamis(weekly) 08.00-10.30</p>
+              </div>
 
               <div class="row">
                 <div class="col-md-12">
                   <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
+                      <li><a href="#ringkasan" data-toggle="tab">Ringkasan</a></li>
                       <li class="active"><a href="#all" data-toggle="tab">All</a></li>
                       <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -272,13 +271,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <li><a href="#s-3_publishing" data-toggle="tab">Publishing</a></li>
                         </ul>
                       </li>
-                      <li class="pull-right">
-                        <button class="btn btn-text btn-sm btn-primary pull-right">Tambah Jadwal </button>
-                      </li>
+                      <li><a href="#bimbingan" data-toggle="tab">Bimbingan</a></li>
+                      <li><a href="#penguji" data-toggle="tab">Penguji</a></li>
                     </ul>
                     <div class="tab-content">
+                      <div class="tab-pane" id="ringkasan">
+                        <div class="box-body no-padding">
+                          <table class="table table-striped table-bordered">
+                            <tr>
+                              <th>Jumlah Mata Kuliah</th>
+                              <th>Total SKS</th>
+                              <th>blabla</th>
+                            </tr>
+                            <tr>
+                              <td>4</td>
+                              <td>11</td>
+                              <td>blabla</td>
+                            </tr>
+                          </table>
+                        </div><!-- /.box-body -->
+                      </div><!-- /.tab-pane -->
+
                       <div class="tab-pane active" id="all">
-
                         <div class="box-body no-padding">
                           <table class="table table-striped table-bordered">
                             <tr>
@@ -295,7 +309,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   <div class="input-group">
                                     <input type="text" name="table_search" class="form-control input-sm" placeholder="Search">
                                     <div class="input-group-btn">
-                                      <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                                      <button class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
                                     </div>
                                   </div>
                               </th>
@@ -304,7 +318,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   <div class="input-group">
                                     <input type="text" name="table_search" class="form-control input-sm" placeholder="Search">
                                     <div class="input-group-btn">
-                                      <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                                      <button class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
                                     </div>
                                   </div>
                               </th>
@@ -313,9 +327,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   <div class="input-group">
                                     <input type="text" name="table_search" class="form-control input-sm" placeholder="Search">
                                     <div class="input-group-btn">
-                                      <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                                      <button class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
                                     </div>
                                   </div>
+                              </th>
+                              <th>
+                                <button class="btn btn-th btn-sm btn-primary center-block"><i class="fa fa-plus-square"></i> TAMBAH</button>
                               </th>
                             </tr>
                             <tr>
@@ -331,22 +348,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </tr>
                           </table>
                         </div><!-- /.box-body -->
-
                       </div><!-- /.tab-pane -->
+
                       <div class="tab-pane" id="s-1_narasumber">
-
                       </div><!-- /.tab-pane -->
+
                       <div class="tab-pane" id="s-1_fasilitator">
-
                       </div><!-- /.tab-pane -->
+
                       <div class="tab-pane" id="s-1_skills-lab">
-
                       </div><!-- /.tab-pane -->
+
                       <div class="tab-pane" id="s-1_pemberian-kuril">
-
                       </div><!-- /.tab-pane -->
-                      <div class="tab-pane" id="profesi_klinik">
 
+                      <div class="tab-pane" id="profesi_klinik">
                         <div class="box-body no-padding">
                           <table class="table table-striped table-bordered">
                             <tr>
@@ -363,7 +379,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   <div class="input-group">
                                     <input type="text" name="table_search" class="form-control input-sm" placeholder="Search">
                                     <div class="input-group-btn">
-                                      <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                                      <button class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
                                     </div>
                                   </div>
                               </th>
@@ -372,7 +388,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   <div class="input-group">
                                     <input type="text" name="table_search" class="form-control input-sm" placeholder="Search">
                                     <div class="input-group-btn">
-                                      <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                                      <button class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
                                     </div>
                                   </div>
                               </th>
@@ -381,9 +397,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   <div class="input-group">
                                     <input type="text" name="table_search" class="form-control input-sm" placeholder="Search">
                                     <div class="input-group-btn">
-                                      <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                                      <button class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
                                     </div>
                                   </div>
+                              </th>
+                              <th>
+                                <button class="btn btn-th btn-sm btn-primary center-block"><i class="fa fa-plus-square"></i> TAMBAH</button>
                               </th>
                             </tr>
                             <tr>
@@ -401,36 +420,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div><!-- /.box-body -->
 
                       </div><!-- /.tab-pane -->
+
                       <div class="tab-pane" id="spesialis_kuliah">
-
                       </div><!-- /.tab-pane -->
+
                       <div class="tab-pane" id="spesialis_draft">
-
                       </div><!-- /.tab-pane -->
+
                       <div class="tab-pane" id="spesialis_cs-sr-j">
-
                       </div><!-- /.tab-pane -->
+
                       <div class="tab-pane" id="spesialis_klinik">
-
                       </div><!-- /.tab-pane -->
+
                       <div class="tab-pane" id="spesialis_pemberian-kuril">
-
                       </div><!-- /.tab-pane -->
+
                       <div class="tab-pane" id="s-2_kuliah">
-
                       </div><!-- /.tab-pane -->
+
                       <div class="tab-pane" id="s-2_seminar">
-
                       </div><!-- /.tab-pane -->
+
                       <div class="tab-pane" id="s-2_pemberian-kuril">
-
                       </div><!-- /.tab-pane -->
+
                       <div class="tab-pane" id="s-3_kuliah">
-
                       </div><!-- /.tab-pane -->
+
                       <div class="tab-pane" id="s-3_publishing">
-
                       </div><!-- /.tab-pane -->
+
+                      <div class="tab-pane" id="bimbingan">
+                      </div><!-- /.tab-pane -->
+
+                      <div class="tab-pane" id="penguji">
+                      </div><!-- /.tab-pane -->
+
                     </div><!-- /.tab-content -->
                   </div><!-- nav-tabs-custom -->
                 </div><!-- /.col -->
