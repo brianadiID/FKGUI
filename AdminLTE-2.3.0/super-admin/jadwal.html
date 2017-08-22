@@ -27,6 +27,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
     <!-- Select2 -->
     <link rel="stylesheet" href="../plugins/select2/select2.min.css">
+    <!-- fullCalendar 2.2.5-->
+    <link rel="stylesheet" href="../plugins/fullcalendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="../plugins/fullcalendar/fullcalendar.print.css" media="print">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -220,8 +223,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="col-md-12">
                   <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
-                      <li><a href="#ringkasan" data-toggle="tab">Ringkasan</a></li>
-                      <li class="active"><a href="#all" data-toggle="tab">All</a></li>
+                      <li class="active"><a href="#ringkasan" data-toggle="tab">Ringkasan</a></li>
                       <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                           S-1 <span class="caret"></span>
@@ -271,39 +273,53 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           <li><a href="#s-3_publishing" data-toggle="tab">Publishing</a></li>
                         </ul>
                       </li>
-                      <li><a href="#bimbingan" data-toggle="tab">Bimbingan</a></li>
+                      <li><a href="#pembimbing" data-toggle="tab">Pembimbing</a></li>
                       <li><a href="#penguji" data-toggle="tab">Penguji</a></li>
+                      <li><a href="#calendar" data-toggle="tab">Calendar</a></li>
                     </ul>
                     <div class="tab-content">
-                      <div class="tab-pane" id="ringkasan">
-                        <div class="box-body no-padding">
-                          <table class="table table-striped table-bordered">
-                            <tr>
-                              <th>Jumlah Mata Kuliah</th>
-                              <th>Total SKS</th>
-                              <th>blabla</th>
-                            </tr>
-                            <tr>
-                              <td>4</td>
-                              <td>11</td>
-                              <td>blabla</td>
-                            </tr>
-                          </table>
-                        </div><!-- /.box-body -->
-                      </div><!-- /.tab-pane -->
-
-                      <div class="tab-pane active" id="all">
+                      <div class="tab-pane active" id="ringkasan">
                         <div class="box-body no-padding">
                           <table class="table table-striped table-bordered">
                             <tr>
                               <th></th>
                               <th>Nama Mata Kuliah</th>
                               <th>Waktu</th>
-                              <th>SKS</th>
+                              <th>Skenario</th>
+                              <th>SKS Ekivalen</th>
+                              <th>Beban SKS Dosen</th>
+                              <th>FTE</th>
                               <th style="width: 92px"></th>
                             </tr>
                             <tr>
                               <th></th>
+                              <th>
+                                <div class="box-tools">
+                                  <div class="input-group">
+                                    <input type="text" name="table_search" class="form-control input-sm" placeholder="Search">
+                                    <div class="input-group-btn">
+                                      <button class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                                    </div>
+                                  </div>
+                              </th>
+                              <th>
+                                <div class="box-tools">
+                                  <div class="input-group">
+                                    <input type="text" name="table_search" class="form-control input-sm" placeholder="Search">
+                                    <div class="input-group-btn">
+                                      <button class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                                    </div>
+                                  </div>
+                              </th>
+                              <th>
+                                <div class="box-tools">
+                                  <div class="input-group">
+                                    <input type="text" name="table_search" class="form-control input-sm" placeholder="Search">
+                                    <div class="input-group-btn">
+                                      <button class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                                    </div>
+                                  </div>
+                              </th>
                               <th>
                                 <div class="box-tools">
                                   <div class="input-group">
@@ -339,7 +355,120 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <td>1</td>
                               <td>Keterampilan Klinik</td>
                               <td>Selasa(16/9/2017) 08.00-11.00</td>
-                              <td>3</td>
+                              <td>-</td>
+                              <td>7.560</td>
+                              <td>4.560</td>
+                              <td>-</td>
+                              <td>
+                                <button class="btn btn-text btn-xs"><i class="fa fa-eye"></i></button>
+                                <button class="btn btn-text btn-xs"><i class="fa fa-edit"></i></button>
+                                <button class="btn btn-text btn-xs"><i class="fa fa-trash-o"></i></button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td>Narasumber Aa</td>
+                              <td>-</td>
+                              <td>5</td>
+                              <td>7.560</td>
+                              <td>4.560</td>
+                              <td>-</td>
+                              <td>
+                                <button class="btn btn-text btn-xs"><i class="fa fa-eye"></i></button>
+                                <button class="btn btn-text btn-xs"><i class="fa fa-edit"></i></button>
+                                <button class="btn btn-text btn-xs"><i class="fa fa-trash-o"></i></button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th></th>
+                              <th></th>
+                              <th></th>
+                              <th class="bg-info">Total : </th>
+                              <th class="bg-info">15.120</th>
+                              <th class="bg-info">9.120</th>
+                              <th class="bg-info">-</th>
+                              <th style="width: 92px"></th>
+                            </tr>
+                          </table>
+                        </div><!-- /.box-body -->
+
+                      </div><!-- /.tab-pane -->
+
+                      <div class="tab-pane" id="s-1_narasumber">
+                        <div class="box-body no-padding">
+                          <table class="table table-striped table-bordered">
+                            <tr>
+                              <th></th>
+                              <th>Nama Mata Kuliah</th>
+                              <th>Skenario</th>
+                              <th>SKS Ekivalen</th>
+                              <th>Beban SKS Dosen</th>
+                              <th>FTE</th>
+                              <th style="width: 92px"></th>
+                            </tr>
+                                <button class="btn btn-text btn-xs"><i class="fa fa-eye"></i></button>
+                                <button class="btn btn-text btn-xs"><i class="fa fa-edit"></i></button>
+                                <button class="btn btn-text btn-xs"><i class="fa fa-trash-o"></i></button>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th></th>
+                              <th>
+                                <div class="box-tools">
+                                  <div class="input-group">
+                                    <input type="text" name="table_search" class="form-control input-sm" placeholder="Search">
+                                    <div class="input-group-btn">
+                                      <button class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                                    </div>
+                                  </div>
+                              </th>
+                              <th>
+                                <div class="box-tools">
+                                  <div class="input-group">
+                                    <input type="text" name="table_search" class="form-control input-sm" placeholder="Search">
+                                    <div class="input-group-btn">
+                                      <button class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                                    </div>
+                                  </div>
+                              </th>
+                              <th>
+                                <div class="box-tools">
+                                  <div class="input-group">
+                                    <input type="text" name="table_search" class="form-control input-sm" placeholder="Search">
+                                    <div class="input-group-btn">
+                                      <button class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                                    </div>
+                                  </div>
+                              </th>
+                              <th>
+                                <div class="box-tools">
+                                  <div class="input-group">
+                                    <input type="text" name="table_search" class="form-control input-sm" placeholder="Search">
+                                    <div class="input-group-btn">
+                                      <button class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                                    </div>
+                                  </div>
+                              </th>
+                              <th>
+                                <div class="box-tools">
+                                  <div class="input-group">
+                                    <input type="text" name="table_search" class="form-control input-sm" placeholder="Search">
+                                    <div class="input-group-btn">
+                                      <button class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                                    </div>
+                                  </div>
+                              </th>
+                              <th>
+                                <button class="btn btn-th btn-sm btn-primary center-block"><i class="fa fa-plus-square"></i> TAMBAH</button>
+                              </th>
+                            </tr>
+                            <tr>
+                              <td>1</td>
+                              <td>Narasumber Aa</td>
+                              <td>5</td>
+                              <td>7.560</td>
+                              <td>4.560</td>
+                              <td>-</td>
                               <td>
                                 <button class="btn btn-text btn-xs"><i class="fa fa-eye"></i></button>
                                 <button class="btn btn-text btn-xs"><i class="fa fa-edit"></i></button>
@@ -348,9 +477,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </tr>
                           </table>
                         </div><!-- /.box-body -->
-                      </div><!-- /.tab-pane -->
-
-                      <div class="tab-pane" id="s-1_narasumber">
                       </div><!-- /.tab-pane -->
 
                       <div class="tab-pane" id="s-1_fasilitator">
@@ -369,11 +495,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <th></th>
                               <th>Nama Mata Kuliah</th>
                               <th>Waktu</th>
-                              <th>SKS</th>
+                              <th>SKS Ekivalen</th>
+                              <th>Beban SKS Dosen</th>
+                              <th>FTE</th>
                               <th style="width: 92px"></th>
                             </tr>
                             <tr>
                               <th></th>
+                              <th>
+                                <div class="box-tools">
+                                  <div class="input-group">
+                                    <input type="text" name="table_search" class="form-control input-sm" placeholder="Search">
+                                    <div class="input-group-btn">
+                                      <button class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                                    </div>
+                                  </div>
+                              </th>
+                              <th>
+                                <div class="box-tools">
+                                  <div class="input-group">
+                                    <input type="text" name="table_search" class="form-control input-sm" placeholder="Search">
+                                    <div class="input-group-btn">
+                                      <button class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button>
+                                    </div>
+                                  </div>
+                              </th>
                               <th>
                                 <div class="box-tools">
                                   <div class="input-group">
@@ -409,7 +555,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                               <td>1</td>
                               <td>Keterampilan Klinik</td>
                               <td>Selasa(16/9/2017) 08.00-11.00</td>
-                              <td>3</td>
+                              <td>7.560</td>
+                              <td>4.560</td>
+                              <td>-</td>
                               <td>
                                 <button class="btn btn-text btn-xs"><i class="fa fa-eye"></i></button>
                                 <button class="btn btn-text btn-xs"><i class="fa fa-edit"></i></button>
@@ -451,10 +599,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <div class="tab-pane" id="s-3_publishing">
                       </div><!-- /.tab-pane -->
 
-                      <div class="tab-pane" id="bimbingan">
+                      <div class="tab-pane" id="pembimbing">
                       </div><!-- /.tab-pane -->
 
                       <div class="tab-pane" id="penguji">
+                      </div><!-- /.tab-pane -->
+
+                      <div class="tab-pane" id="calendar">
+            <div class="col-md-12">
+              <div class="box">
+                <div class="box-body no-padding">
+                  <!-- THE CALENDAR -->
+                  <div id="calendar"></div>
+                </div><!-- /.box-body -->
+              </div><!-- /. box -->
+            </div><!-- /.col -->
                       </div><!-- /.tab-pane -->
 
                     </div><!-- /.tab-content -->
@@ -499,12 +658,151 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="../dist/js/demo.js"></script>
     <!-- Select2 -->
     <script src="../plugins/select2/select2.full.min.js"></script>
+    <!-- fullCalendar 2.2.5 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+    <script src="../plugins/fullcalendar/fullcalendar.min.js"></script>
 
     <!-- Page specific script -->
     <script>
       $(function () {
         //Initialize Select2 Elements
         $(".select2").select2();
+      });
+      $(function () {
+
+        /* initialize the external events
+         -----------------------------------------------------------------*/
+        function ini_events(ele) {
+          ele.each(function () {
+
+            // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+            // it doesn't need to have a start or end
+            var eventObject = {
+              title: $.trim($(this).text()) // use the element's text as the event title
+            };
+
+            // store the Event Object in the DOM element so we can get to it later
+            $(this).data('eventObject', eventObject);
+
+            // make the event draggable using jQuery UI
+            $(this).draggable({
+              zIndex: 1070,
+              revert: true, // will cause the event to go back to its
+              revertDuration: 0  //  original position after the drag
+            });
+
+          });
+        }
+        ini_events($('#external-events div.external-event'));
+
+        /* initialize the calendar
+         -----------------------------------------------------------------*/
+        //Date for the calendar events (dummy data)
+        var date = new Date();
+        var d = date.getDate(),
+                m = date.getMonth(),
+                y = date.getFullYear();
+        $('#calendar').fullCalendar({
+          header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+          },
+          buttonText: {
+            today: 'today',
+            month: 'month',
+            week: 'week',
+            day: 'day'
+          },
+          //Random default events
+          events: [
+            {
+              title: 'S-1 Pemberian Kuril',
+              start: new Date(y, m, 24, 10, 0),
+              end: new Date(y, m, 24, 11, 40),
+              allDay: false,
+              backgroundColor: "#0073b7", //Blue
+              borderColor: "#0073b7" //Blue
+            },
+            {
+              title: 'S-1 Pemberian Kuril',
+              start: new Date(y, m, d-7, 10, 0),
+              end: new Date(y, m, d-7, 11, 40),
+              allDay: false,
+              backgroundColor: "#0073b7", //Blue
+              borderColor: "#0073b7" //Blue
+            },
+            {
+              title: 'S-1 Pemberian Kuril',
+              start: new Date(y, m, d, 10, 0),
+              end: new Date(y, m, d, 11, 40),
+              allDay: false,
+              backgroundColor: "#0073b7", //Blue
+              borderColor: "#0073b7" //Blue
+            },
+            {
+              title: 'S-1 Pemberian Kuril',
+              start: new Date(y, m, d-14, 10, 0),
+              end: new Date(y, m, d-14, 11, 40),
+              allDay: false,
+              backgroundColor: "#0073b7", //Blue
+              borderColor: "#0073b7" //Blue
+            },
+            {
+              title: 'S-1 Pemberian Kuril',
+              start: new Date(y, m, d+7, 10, 0),
+              end: new Date(y, m, d+7, 11, 40),
+              allDay: false,
+              backgroundColor: "#0073b7", //Blue
+              borderColor: "#0073b7" //Blue
+            },
+            {
+              title: 'S-1 Pemberian Kuril',
+              start: new Date(y, m, d+14, 10, 0),
+              end: new Date(y, m, d+14, 11, 40),
+              allDay: false,
+              backgroundColor: "#0073b7", //Blue
+              borderColor: "#0073b7" //Blue
+            },
+            {
+              title: 'Profesi Klinik',
+              start: new Date(y, m, d, 13, 0),
+              end: new Date(y, m, d, 16, 0),
+              allDay: false,
+              backgroundColor: "#00a65a", //Success (green)
+              borderColor: "#00a65a" //Success (green)
+            },
+            {
+              title: 'S-2 Kuliah',
+              start: new Date(y, m, d + 1, 7, 0),
+              end: new Date(y, m, d + 1, 10, 30),
+              allDay: false,
+              backgroundColor: "#00c0ef", //Info (aqua)
+              borderColor: "#00c0ef" //Info (aqua)
+            }
+          ],
+          editable: false,
+          droppable: false, // this allows things to be dropped onto the calendar !!!
+          drop: function (date, allDay) { // this function is called when something is dropped
+
+            // retrieve the dropped element's stored Event Object
+            var originalEventObject = $(this).data('eventObject');
+
+            // we need to copy it, so that multiple events don't have a reference to the same object
+            var copiedEventObject = $.extend({}, originalEventObject);
+
+            // assign it the date that was reported
+            copiedEventObject.start = date;
+            copiedEventObject.allDay = allDay;
+            copiedEventObject.backgroundColor = $(this).css("background-color");
+            copiedEventObject.borderColor = $(this).css("border-color");
+
+            // render the event on the calendar
+            // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+            $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+
+          }
+        });
       });
     </script>
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
